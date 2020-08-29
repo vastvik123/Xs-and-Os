@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X's and O's</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      h1 {
+        font-size: 300%;
+        background-color: #34495e;
+        text-align: center;
+        font-family: helvetica;
+      }
+      .btn {
+        font-family: helvetica;
+        background-color: #34495e;
+        border-radius: 5px;
+        border: 2px solid #2c3e50;
+        text-align: center;
+        height: 50px;
+        cursor: pointer;
+      }
+      .divs {
+        margin-left: 40%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="divs">
+        <form action="game.html" method="GET">
+            <input type="text" name="create" value="true" hidden>
+            <input type="submit" class="btn" value="Create Room" />
+        </form>
+    </div>
+
+    <div class="divs">
+      <form action="game.html" method="GET">
+        <input type="text" name="roomId" required />
+        <input type="submit" class="btn" value="Join Room" />
+      </form>
+    </div>
+  </body>
+</html>

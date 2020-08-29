@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>X's and O's</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .game-board {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        background-color: #34495e;
+        color: #fff;
+        border: 6px solid #2c3e50;
+        border-radius: 10px;
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+      }
+
+      .box {
+        border: 6px solid #2c3e50;
+        border-radius: 2px;
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      #header{
+        font-family: helvetica;
+        text-align: center;
+        color:#34495e;
+      }
+      .btn {
+        font-family: helvetica;
+        background-color: #34495e;
+        border-radius: 5px;
+        border: 2px solid #2c3e50;
+        text-align: center;
+        height: 50px;
+        cursor: pointer;
+      }
+      .divs {
+        margin-left: 45%;
+        margin-top: 5%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 id="header"></h2>
+    <div class="game-board">
+      <div class="box" id="1" onclick="fill(this.id)"></div>
+      <div class="box" id="2" onclick="fill(this.id)"></div>
+      <div class="box" id="3" onclick="fill(this.id)"></div>
+      <div class="box" id="4" onclick="fill(this.id)"></div>
+      <div class="box" id="5" onclick="fill(this.id)"></div>
+      <div class="box" id="6" onclick="fill(this.id)"></div>
+      <div class="box" id="7" onclick="fill(this.id)"></div>
+      <div class="box" id="8" onclick="fill(this.id)"></div>
+      <div class="box" id="9" onclick="fill(this.id)"></div>
+    </div>
+    <div class="divs">
+      <button class="btn" id="rematch" onclick = "rematch()">Rematch</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

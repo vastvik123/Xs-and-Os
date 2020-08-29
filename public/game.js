@@ -139,6 +139,7 @@ socket.on("gameOver", () =>{
     else if(temp.length>0){
         document.getElementById(temp[0]).innerHTML = 'X';
     }
+    document.getElementById("header").innerHTML = "Draw";
     document.getElementById("rematch").removeAttribute("disabled");
 });
 

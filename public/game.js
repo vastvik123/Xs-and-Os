@@ -49,7 +49,7 @@ if(url.searchParams.get('create')){
  socket.on('roomCreated',(roomId) => {
     //console.log("Room Id is: " + roomId);
     my.setRoom(roomId);
-    document.getElementById('header').innerHTML = 'Room Created! Waiting for Opponent...';
+    document.getElementById('header').innerHTML = `Room Created! Share this RoomId: ${roomId} with your friend. Waiting for Opponent...`;
  });
 
 }
@@ -68,7 +68,7 @@ else if(url.searchParams.get('roomId')){
 
 else{
     alert('Wrong Room');
-    location.replace('http://localhost:3000');
+    location.replace('https://xs-os.herokuapp.com/');
 }
 
 
@@ -98,7 +98,7 @@ function fill(id) {
 
 socket.on("wrongRoom", () => {
     alert('Wrong Room');
-    location.replace('http://localhost:3000');
+    location.replace('https://xs-os.herokuapp.com/');
 });
 
 socket.on('yourTurn',(grid) => {
@@ -176,7 +176,7 @@ socket.on("youLost", (current) => {
 
 socket.on("opponentLeft", () => {
     alert("opponent Disconnected");
-    location.replace("http://localhost:3000");
+    location.replace("https://xs-os.herokuapp.com/");
 });
 
 function rematch(){
@@ -198,7 +198,7 @@ socket.on("wantRematch", () => {
       }
     else {
         socket.emit("rematchRejected",room);
-        location.replace("http://localhost:3000");
+        location.replace("https://xs-os.herokuapp.com/");
     }
 });
 
@@ -213,5 +213,5 @@ socket.on("rematchAccepted", room => {
 
 socket.on("rematchRejected", room => {
     alert("rematch rejected");
-    location.replace("http://localhost:3000");
+    location.replace("https://xs-os.herokuapp.com/");
 })

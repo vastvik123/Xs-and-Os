@@ -68,6 +68,7 @@ io.on("connection", (socket) => {
 
       var game = {
         room : parseInt(roomId),
+        rematch : false,
         grid : [1,2,3,4,5,6,7,8,9]
       }
       games.push(game);
@@ -138,13 +139,29 @@ io.on("connection", (socket) => {
         break;
       }
     }
+    var pos;
+    for(var i=0;i<users.length;i++){
+      if(room == games[i].room){
+        pos = i;
+        break;
+      }
+    }
+    if(!games[pos].rematch)
     socket.broadcast.to(room).emit("wantRematch");
+
+    games[pos].rematch = true;
   });
 
   socket.on('rematchAccepted',room => {
     for(var i=0;i<users.length;i++){
       if(socket.id == users[i].id){
         users[i].moves = [];
+        break;
+      }
+    }
+    for(var i=0;i<users.length;i++){
+      if(room == games[i].room){
+        games[i].rematch = false;
         break;
       }
     }

@@ -12,6 +12,11 @@
         text-align: center;
         font-family: helvetica;
       }
+      h3{
+        background-color: #34495e;
+        text-align: center;
+        font-family: helvetica;
+      }
       .btn {
         font-family: helvetica;
         background-color: #34495e;
@@ -22,13 +27,14 @@
         cursor: pointer;
       }
       .divs {
-        margin-left: 40%;
+        margin-left: 45%;
       }
     </style>
   </head>
 
   <body>
     <h1>Tic-Tac-Toe</h1>
+    <h3>Create a Room:</h3>
     <div class="divs">
         <form action="game.html" method="GET">
             <input type="text" name="create" value="true" hidden>
@@ -36,6 +42,7 @@
         </form>
     </div>
 
+    <h3>Join a Room:</h3>
     <div class="divs">
       <form action="game.html" method="GET">
         <input type="text" name="roomId" required />

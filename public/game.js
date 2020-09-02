@@ -63,7 +63,7 @@ if (url.searchParams.get('create')) {
     socket.on('roomCreated', (roomId) => {
         //console.log("Room Id is: " + roomId);
         my.setRoom(roomId);
-        document.getElementById('header').innerHTML = `Room Created! Share this RoomId: ${roomId} with your friend. Waiting for Opponent...`;
+        document.getElementById('header').innerHTML = `RoomId: ${roomId}<br> Waiting for Opponent...`;
     });
 }
 else if (url.searchParams.get('roomId')) {
